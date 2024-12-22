@@ -14,20 +14,20 @@
             <div class="bg-image"></div>
         </section>
     </header>
-    <!-- Прелоадер -->
-    <div class="preloader">
-        <div class="dragon-eye"></div>
-        <div class="loading-text">
-            <span>З</span>
-            <span>А</span>
-            <span>Г</span>
-            <span>Р</span>
-            <span>У</span>
-            <span>З</span>
-            <span>К</span>
-            <span>А</span>
-        </div>
-    </div>
+    <script>
+        // Резервный вариант для принудительного скрытия прелоадера
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                const preloader = document.querySelector('.preloader');
+                if (preloader && preloader.style.display !== 'none') {
+                    preloader.classList.add('preloader-hidden');
+                    setTimeout(() => {
+                        preloader.style.display = 'none';
+                    }, 600);
+                }
+            }, 2000); // Принудительное скрытие через 2 секунды
+        });
+    </script>
 </body>
 </html>
 

@@ -1,19 +1,19 @@
-// Управление прелоадером
-document.addEventListener('DOMContentLoaded', () => {
+// Немедленно выполняемая функция для прелоадера
+(function() {
     const preloader = document.querySelector('.preloader');
     
-    // Функция для скрытия прелоадера
-    const hidePreloader = () => {
-        preloader.style.opacity = '0';
+    function hidePreloader() {
+        preloader.classList.add('preloader-hidden');
         setTimeout(() => {
             preloader.style.display = 'none';
-        }, 500); // Задержка для плавного исчезновения
-    };
-
-    // Проверяем, загружены ли все ресурсы
-    if (document.readyState === 'complete') {
-        hidePreloader();
-    } else {
-        window.addEventListener('load', hidePreloader);
+        }, 600);
     }
-}); 
+
+    // Скрыть прелоадер после загрузки всего контента
+    window.addEventListener('load', hidePreloader);
+    
+    // Запасной вариант: скрыть прелоадер через 3 секунды, если что-то пошло не так
+    setTimeout(hidePreloader, 3000);
+})();
+
+// Остальной код JavaScript... 
