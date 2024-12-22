@@ -6,57 +6,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DragonEvo</title>
     <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="static/js/script.js" defer></script>
 </head>
 <body>
+    <div class="loader">
+        <div class="dragon-loader"></div>
+    </div>
+
     <header>
         <nav class="navbar">
-            <div class="logo">DragonEvo</div>
+            <div class="logo">
+                <span class="dragon-icon">🐉</span>
+                DragonEvo
+            </div>
             <ul class="nav-links">
                 <li><a href="#home">Главная</a></li>
                 <li><a href="#about">О нас</a></li>
                 <li><a href="#dragons">Драконы</a></li>
+                <li><a href="#features">Особенности</a></li>
+                <li><a href="#gallery">Галерея</a></li>
                 <li><a href="#contact">Контакты</a></li>
             </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
         </nav>
     </header>
 
     <main>
         <section id="home" class="hero">
-            <div class="hero-content">
+            <div class="hero-content" data-aos="fade-up">
                 <h1>Добро пожаловать в мир драконов</h1>
                 <p>Исследуйте магический мир и развивайте своего дракона</p>
                 <button class="cta-button">Начать приключение</button>
             </div>
+            <div class="floating-dragons">
+                <img src="static/images/dragon1.png" class="floating-dragon" alt="Летающий дракон">
+                <img src="static/images/dragon2.png" class="floating-dragon" alt="Летающий дракон">
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="about-content" data-aos="fade-right">
+                <h2>О нашем мире</h2>
+                <p>Погрузитесь в захватывающий мир, где драконы живут бок о бок с людьми. Исследуйте древние руины, находите сокровища и развивайте своего дракона.</p>
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="1000">0</span>
+                        <span class="stat-label">Игроков</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="50">0</span>
+                        <span class="stat-label">Видов драконов</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="100">0</span>
+                        <span class="stat-label">Локаций</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="dragons" class="dragons-section">
-            <h2>Наши драконы</h2>
+            <h2 data-aos="fade-down">Наши драконы</h2>
             <div class="dragon-cards">
-                <div class="dragon-card">
-                    <img src="static/images/fire-dragon.jpg" alt="Огненный дракон">
-                    <h3>Огненный дракон</h3>
-                    <p>Мастер пламени и разрушения</p>
+                <div class="dragon-card" data-aos="flip-left">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="static/images/fire-dragon.jpg" alt="Огненный дракон">
+                            <h3>Огненный дракон</h3>
+                        </div>
+                        <div class="card-back">
+                            <h3>Характеристики</h3>
+                            <ul>
+                                <li>Сила: 90/100</li>
+                                <li>Скорость: 75/100</li>
+                                <li>Магия: 85/100</li>
+                            </ul>
+                            <button class="select-dragon">Выбрать</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="dragon-card">
-                    <img src="static/images/ice-dragon.jpg" alt="Ледяной дракон">
-                    <h3>Ледяной дракон</h3>
-                    <p>Повелитель льда и холода</p>
-                </div>
-                <div class="dragon-card">
-                    <img src="static/images/storm-dragon.jpg" alt="Штормовой дракон">
-                    <h3>Штормовой дракон</h3>
-                    <p>Властелин молний и бури</p>
-                </div>
+                <!-- Аналогичные карточки для других драконов -->
             </div>
+        </section>
+
+        <section id="features" class="features-section">
+            <h2 data-aos="fade-down">Особенности игры</h2>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="zoom-in">
+                    <i class="feature-icon">🏰</i>
+                    <h3>Исследование мира</h3>
+                    <p>Огромный открытый мир с уникальными локациями</p>
+                </div>
+                <!-- Добавьте больше карточек с особенностями -->
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery-section">
+            <h2 data-aos="fade-down">Галерея</h2>
+            <div class="gallery-container">
+                <!-- Изображения будут добавлены через JavaScript -->
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2 data-aos="fade-down">Свяжитесь с нами</h2>
+            <form class="contact-form" data-aos="fade-up">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="email" placeholder="Ваш email" required>
+                <textarea placeholder="Ваше сообщение" required></textarea>
+                <button type="submit" class="submit-button">Отправить</button>
+            </form>
         </section>
     </main>
 
     <footer>
         <div class="footer-content">
+            <div class="footer-section">
+                <h3>DragonEvo</h3>
+                <p>Ваше приключение в мире драконов</p>
+            </div>
+            <div class="footer-section">
+                <h3>Социальные сети</h3>
+                <div class="social-links">
+                    <!-- Добавьте иконки социальных сетей -->
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
             <p>&copy; 2024 DragonEvo. Все права защищены.</p>
         </div>
     </footer>
+
+    <div class="scroll-top">↑</div>
 </body>
 </html>
 

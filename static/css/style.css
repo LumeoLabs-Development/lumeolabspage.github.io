@@ -1,148 +1,157 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Добавим новые стили к существующим */
 
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background-color: #1a1a1a;
-    color: #ffffff;
-}
-
-/* Навигация */
-.navbar {
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 1rem 2rem;
+/* Загрузчик */
+.loader {
     position: fixed;
-    width: 100%;
     top: 0;
-    z-index: 1000;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1a1a1a;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    z-index: 9999;
 }
 
-.logo {
-    font-size: 2rem;
+.dragon-loader {
+    width: 100px;
+    height: 100px;
+    background: url('../images/dragon-loader.gif') no-repeat center;
+    background-size: contain;
+}
+
+/* Плавающие драконы */
+.floating-dragons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.floating-dragon {
+    position: absolute;
+    width: 150px;
+    opacity: 0.7;
+    animation: float 20s infinite linear;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(-100%, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(100vw, 0) rotate(360deg);
+    }
+}
+
+/* Карточки с эффектом переворота */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.dragon-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    background: #2a2a2a;
+    padding: 20px;
+}
+
+/* Статистика */
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
     font-weight: bold;
     color: #ff6b6b;
 }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-}
-
-.nav-links li {
-    margin-left: 2rem;
-}
-
-.nav-links a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #ff6b6b;
-}
-
-/* Герой секция */
-.hero {
-    height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('../images/dragon-background.jpg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.hero-content {
-    max-width: 800px;
-    padding: 2rem;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    color: #ff6b6b;
-}
-
-.hero p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.cta-button {
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    background-color: #ff6b6b;
+/* Кнопка прокрутки вверх */
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: #ff6b6b;
     color: white;
-    border: none;
-    border-radius: 5px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
-.cta-button:hover {
-    background-color: #ff4757;
-}
-
-/* Секция драконов */
-.dragons-section {
-    padding: 5rem 2rem;
-}
-
-.dragons-section h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: #ff6b6b;
-}
-
-.dragon-cards {
+/* Галерея */
+.gallery-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.dragon-card {
-    background-color: #2a2a2a;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-}
-
-.dragon-card:hover {
-    transform: translateY(-10px);
-}
-
-.dragon-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.dragon-card h3 {
-    padding: 1rem;
-    color: #ff6b6b;
-}
-
-.dragon-card p {
-    padding: 0 1rem 1rem;
-}
-
-/* Футер */
-footer {
-    background-color: #000000;
-    color: #ffffff;
-    text-align: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
     padding: 2rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Адаптивное меню */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        width: 60%;
+        height: calc(100vh - 70px);
+        background: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+        transition: right 0.3s;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .burger {
+        display: block;
+    }
 } 
