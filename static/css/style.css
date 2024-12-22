@@ -1,59 +1,3 @@
-/* Основные переменные */
-:root {
-    /* Темная тема (по умолчанию) */
-    --primary-bg: #13111C;
-    --secondary-bg: #1A1625;
-    --accent-color: #8A2BE2;
-    --accent-hover: #9B4DEB;
-    --text-primary: #FFFFFF;
-    --text-secondary: #B8B8B8;
-    --border-color: #2A2438;
-    --card-bg: #1E1A29;
-    --modal-bg: rgba(19, 17, 28, 0.95);
-    --success-color: #4CAF50;
-    --error-color: #FF5252;
-    --warning-color: #FFC107;
-    --info-color: #2196F3;
-    
-    /* Анимационные переменные */
-    --transition-speed: 0.3s;
-    --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Светлая тема */
-[data-theme="light"] {
-    --primary-bg: #FFFFFF;
-    --secondary-bg: #F5F5F5;
-    --accent-color: #6B2FBF;
-    --accent-hover: #5A27A3;
-    --text-primary: #333333;
-    --text-secondary: #666666;
-    --border-color: #E0E0E0;
-    --card-bg: #FFFFFF;
-    --modal-bg: rgba(255, 255, 255, 0.95);
-}
-
-/* Сброс стилей */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-    font-size: 16px;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--primary-bg);
-    color: var(--text-primary);
-    line-height: 1.6;
-    overflow-x: hidden;
-    transition: background-color var(--transition-speed) var(--transition-timing);
-}
-
 /* Прелоадер */
 .preloader {
     position: fixed;
@@ -70,6 +14,7 @@ body {
     transition: opacity 0.5s ease-out;
 }
 
+/* Анимация глаза дракона */
 .dragon-eye {
     width: 100px;
     height: 100px;
@@ -77,10 +22,29 @@ body {
     border-radius: 50%;
     position: relative;
     animation: glow 2s infinite;
+    box-shadow: 0 0 20px var(--accent-color);
 }
 
+@keyframes glow {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}
+
+/* Анимация текста загрузки */
 .loading-text {
     margin-top: 2rem;
+    display: flex;
+    gap: 0.5rem;
 }
 
 .loading-text span {
@@ -88,213 +52,21 @@ body {
     font-size: 1.5rem;
     color: var(--accent-color);
     animation: bounce 0.5s ease-in-out infinite;
-    animation-delay: calc(0.1s * var(--i));
 }
 
-/* Панель настроек */
-.settings-panel {
-    position: fixed;
-    right: -300px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 300px;
-    background: var(--secondary-bg);
-    border-radius: 10px 0 0 10px;
-    padding: 1.5rem;
-    transition: right 0.3s ease;
-    z-index: 1000;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
-}
+.loading-text span:nth-child(2) { animation-delay: 0.1s; }
+.loading-text span:nth-child(3) { animation-delay: 0.2s; }
+.loading-text span:nth-child(4) { animation-delay: 0.3s; }
+.loading-text span:nth-child(5) { animation-delay: 0.4s; }
+.loading-text span:nth-child(6) { animation-delay: 0.5s; }
+.loading-text span:nth-child(7) { animation-delay: 0.6s; }
+.loading-text span:nth-child(8) { animation-delay: 0.7s; }
 
-.settings-panel.active {
-    right: 0;
-}
-
-.settings-toggle {
-    position: absolute;
-    left: -50px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-    background: var(--accent-color);
-    border-radius: 10px 0 0 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.settings-toggle:hover {
-    background: var(--accent-hover);
-}
-
-.settings-toggle i {
-    color: var(--text-primary);
-    font-size: 1.5rem;
-    animation: rotate 4s linear infinite;
-}
-
-/* Навигация */
-.main-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-    background: rgba(19, 17, 28, 0.95);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5%;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.dragon-logo {
-    width: 40px;
-    height: 40px;
-    fill: var(--accent-color);
-}
-
-.logo-text {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    letter-spacing: 1px;
-}
-
-.nav-links {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.menu-items {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-.nav-link {
-    color: var(--text-secondary);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: color 0.3s ease;
-    font-weight: 500;
-}
-
-.nav-link i {
-    font-size: 1.2rem;
-}
-
-.nav-link:hover,
-.nav-link.active {
-    color: var(--accent-color);
-}
-
-/* Кнопки навигации */
-.nav-buttons {
-    display: flex;
-    gap: 1rem;
-}
-
-.login-btn,
-.register-btn {
-    padding: 0.5rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.login-btn {
-    background: transparent;
-    color: var(--text-primary);
-    border: 2px solid var(--accent-color);
-}
-
-.register-btn {
-    background: var(--accent-color);
-    color: white;
-}
-
-.login-btn:hover {
-    background: var(--accent-color);
-    color: white;
-}
-
-.register-btn:hover {
-    background: var(--accent-hover);
-}
-
-/* Мобильное меню */
-.burger-menu {
-    display: none;
-    flex-direction: column;
-    gap: 6px;
-    cursor: pointer;
-}
-
-.burger-line {
-    width: 30px;
-    height: 3px;
-    background: var(--text-primary);
-    transition: all 0.3s ease;
-}
-
-/* Hero секция */
-.hero-section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 5rem 2rem;
-    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
-    overflow: hidden;
-}
-
-.hero-content {
-    text-align: center;
-    max-width: 800px;
-    z-index: 1;
-}
-
-.glitch {
-    font-size: 3.5rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    position: relative;
-    text-shadow: 0.05em 0 0 var(--accent-color),
-                 -0.05em -0.025em 0 var(--accent-hover);
-    animation: glitch 1s infinite;
-}
-
-.hero-description {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    margin: 2rem 0;
-}
-
-/* Продолжение следует... */ 
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+} 

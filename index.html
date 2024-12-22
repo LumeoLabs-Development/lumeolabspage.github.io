@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="ru" data-theme="dark">
+
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DragonEvo - Мир Драконов</title>
+    <title>DragonEvo</title>
     <link rel="stylesheet" href="static/css/style.css">
-    <link rel="stylesheet" href="static/css/themes.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="staticjs/script.js"></script>
 </head>
 <body>
+    <header>
+        <section class="header">
+            <div class="bg-image"></div>
+        </section>
+    </header>
     <!-- Прелоадер -->
     <div class="preloader">
         <div class="dragon-eye"></div>
@@ -26,170 +28,6 @@
             <span>А</span>
         </div>
     </div>
-
-    <!-- Панель настроек -->
-    <div class="settings-panel">
-        <div class="settings-toggle">
-            <i class="fas fa-cog"></i>
-        </div>
-        <div class="settings-content">
-            <h3>Настройки</h3>
-            <div class="theme-switcher">
-                <span>Тема:</span>
-                <label class="switch">
-                    <input type="checkbox" id="theme-toggle">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-            <div class="animation-settings">
-                <span>Анимации:</span>
-                <label class="switch">
-                    <input type="checkbox" id="animation-toggle" checked>
-                    <span class="slider round"></span>
-                </label>
-            </div>
-        </div>
-    </div>
-
-    <!-- Главное меню -->
-    <header class="main-header">
-        <nav class="navbar">
-            <div class="logo-container">
-                <div class="logo">
-                    <svg class="dragon-logo" viewBox="0 0 100 100">
-                        <!-- SVG path для логотипа дракона -->
-                        <path d="M50,20 C60,20 70,30 70,40..." fill="currentColor"/>
-                    </svg>
-                    <span class="logo-text">DragonEvo</span>
-                </div>
-            </div>
-
-            <div class="nav-links">
-                <ul class="menu-items">
-                    <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i>Главная</a></li>
-                    <li><a href="#dragons" class="nav-link"><i class="fas fa-dragon"></i>Драконы</a></li>
-                    <li><a href="#world" class="nav-link"><i class="fas fa-globe"></i>Мир</a></li>
-                    <li><a href="#features" class="nav-link"><i class="fas fa-star"></i>Особенности</a></li>
-                    <li><a href="#gallery" class="nav-link"><i class="fas fa-images"></i>Галерея</a></li>
-                    <li><a href="#news" class="nav-link"><i class="fas fa-newspaper"></i>Новости</a></li>
-                    <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i>Контакты</a></li>
-                </ul>
-            </div>
-
-            <div class="nav-buttons">
-                <button class="login-btn">Войти</button>
-                <button class="register-btn">Регистрация</button>
-            </div>
-
-            <div class="burger-menu">
-                <div class="burger-line"></div>
-                <div class="burger-line"></div>
-                <div class="burger-line"></div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Модальные окна -->
-    <div class="modal login-modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Вход</h2>
-            <form class="login-form">
-                <div class="form-group">
-                    <input type="email" required>
-                    <label>Email</label>
-                </div>
-                <div class="form-group">
-                    <input type="password" required>
-                    <label>Пароль</label>
-                </div>
-                <button type="submit">Войти</button>
-            </form>
-        </div>
-    </div>
-
-    <div class="modal register-modal">
-        <!-- Аналогичная структура для формы регистрации -->
-    </div>
-
-    <!-- Основной контент -->
-    <main>
-        <!-- Секция Hero -->
-        <section id="home" class="hero-section">
-            <div class="hero-content">
-                <h1 class="glitch" data-text="Добро пожаловать в DragonEvo">
-                    Добро пожаловать в DragonEvo
-                </h1>
-                <p class="hero-description">
-                    Погрузитесь в захватывающий мир драконов, где каждое решение
-                    влияет на судьбу вашего питомца и развитие целого мира
-                </p>
-                <div class="hero-buttons">
-                    <button class="primary-btn">Начать приключение</button>
-                    <button class="secondary-btn">Узнать больше</button>
-                </div>
-            </div>
-            <div class="hero-dragon">
-                <!-- Анимированный SVG дракон -->
-            </div>
-        </section>
-
-        <!-- Секция Драконов -->
-        <section id="dragons" class="dragons-section">
-            <h2 class="section-title">Виды драконов</h2>
-            <div class="dragon-cards">
-                <!-- Карточки драконов будут добавлены через JavaScript -->
-            </div>
-        </section>
-
-        <!-- Остальные секции -->
-        <!-- ... -->
-
-    </main>
-
-    <!-- Футер -->
-    <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>О DragonEvo</h3>
-                <p>Уникальный мир, где каждый может вырастить собственного дракона</p>
-            </div>
-            <div class="footer-section">
-                <h3>Навигация</h3>
-                <ul>
-                    <li><a href="#home">Главная</a></li>
-                    <li><a href="#dragons">Драконы</a></li>
-                    <li><a href="#features">Особенности</a></li>
-                    <li><a href="#contact">Контакты</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Социальные сети</h3>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-discord"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h3>Подписка на новости</h3>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Ваш email">
-                    <button type="submit">Подписаться</button>
-                </form>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 DragonEvo. Все права защищены.</p>
-        </div>
-    </footer>
-
-    <!-- Скрипты -->
-    <script src="static/js/script.js"></script>
-    <script src="static/js/animations.js"></script>
-    <script src="static/js/dragons.js"></script>
-    <script src="static/js/ui.js"></script>
 </body>
 </html>
 
