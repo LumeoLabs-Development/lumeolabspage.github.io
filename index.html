@@ -80,14 +80,14 @@
         .hero-section .btn {
             font-size: 1.2rem;
             padding: 0.75rem 1.5rem;
-            background-color: #ff6600;
+            background-color: #6a0dad;
             border: none;
             color: #fff;
             transition: background-color 0.3s ease;
         }
 
         .hero-section .btn:hover {
-            background-color: #e65c00;
+            background-color: #5a0c9d;
         }
 
         .carousel-item {
@@ -100,7 +100,7 @@
             position: fixed;
             top: 10px;
             right: 10px;
-            background-color: #ff6600;
+            background-color: #6a0dad;
             color: #fff;
             border: none;
             padding: 0.5rem 1rem;
@@ -109,7 +109,68 @@
         }
 
         .theme-toggle:hover {
-            background-color: #e65c00;
+            background-color: #5a0c9d;
+        }
+
+        .btn-purple {
+            background-color: #6a0dad;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-purple:hover {
+            background-color: #5a0c9d;
+        }
+
+        .btn-purple-outline {
+            background-color: transparent;
+            color: #6a0dad;
+            border: 2px solid #6a0dad;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .btn-purple-outline:hover {
+            background-color: #6a0dad;
+            color: #fff;
+        }
+
+        .animated-button {
+            position: relative;
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.2rem;
+            color: #fff;
+            background-color: #6a0dad;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+            transition: background-color 0.3s ease;
+        }
+
+        .animated-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.5s ease;
+            border-radius: 50%;
+        }
+
+        .animated-button:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .animated-button:hover {
+            background-color: #5a0c9d;
         }
     </style>
 </head>
@@ -144,7 +205,7 @@
         <div>
             <h1>Добро пожаловать в DragonEvo</h1>
             <p>Испытайте захватывающее приключение в карточной игре</p>
-            <a href="#" class="btn">Начать</a>
+            <a href="#" class="btn btn-purple">Начать</a>
         </div>
     </section>
 
@@ -184,6 +245,95 @@
         </button>
     </div>
 
+    <section class="features-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="static/img/feature1.jpg" class="card-img-top" alt="Feature 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Особенность 1</h5>
+                            <p class="card-text">Описание первой особенности игры DragonEvo.</p>
+                            <a href="#" class="btn btn-purple-outline">Узнать больше</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="static/img/feature2.jpg" class="card-img-top" alt="Feature 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Особенность 2</h5>
+                            <p class="card-text">Описание второй особенности игры DragonEvo.</p>
+                            <a href="#" class="btn btn-purple-outline">Узнать больше</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="static/img/feature3.jpg" class="card-img-top" alt="Feature 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Особенность 3</h5>
+                            <p class="card-text">Описание третьей особенности игры DragonEvo.</p>
+                            <a href="#" class="btn btn-purple-outline">Узнать больше</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>О нас</h2>
+                    <p>DragonEvo - это увлекательная карточная игра, которая предлагает игрокам уникальный опыт. Мы стремимся создать захватывающий мир, полный приключений и стратегий.</p>
+                    <a href="#" class="btn btn-purple">Узнать больше</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="static/img/about.jpg" class="img-fluid" alt="About Us">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Контакты</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Имя</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Сообщение</label>
+                            <textarea class="form-control" id="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-purple">Отправить</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <h3>Наши контакты</h3>
+                    <p>Email: info@dragonevo.com</p>
+                    <p>Телефон: +7 (123) 456-7890</p>
+                    <p>Адрес: ул. Примерная, 123, Москва, Россия</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 bg-dark text-white">
+        <div class="container text-center">
+            <p>&copy; 2023 DragonEvo. Все права защищены.</p>
+        </div>
+    </footer>
+
     <script>
         $(window).scroll(function() {
             if ($(this).scrollTop() > 50) {
@@ -199,4 +349,5 @@
     </script>
 </body>
 </html>
+
 
