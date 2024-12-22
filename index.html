@@ -172,6 +172,18 @@
         .animated-button:hover {
             background-color: #5a0c9d;
         }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-group .btn {
+            flex: 1 1 auto;
+            margin: 5px;
+        }
     </style>
 </head>
 <body>
@@ -205,7 +217,10 @@
         <div>
             <h1>Добро пожаловать в DragonEvo</h1>
             <p>Испытайте захватывающее приключение в карточной игре</p>
-            <a href="#" class="btn btn-purple">Начать</a>
+            <div class="btn-group">
+                <a href="#" class="btn btn-purple">Начать</a>
+                <a href="#" class="btn btn-purple-outline">Узнать больше</a>
+            </div>
         </div>
     </section>
 
@@ -254,7 +269,10 @@
                         <div class="card-body">
                             <h5 class="card-title">Особенность 1</h5>
                             <p class="card-text">Описание первой особенности игры DragonEvo.</p>
-                            <a href="#" class="btn btn-purple-outline">Узнать больше</a>
+                            <div class="btn-group">
+                                <a href="#" class="btn btn-purple-outline">Узнать больше</a>
+                                <a href="#" class="btn btn-purple">Начать</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -264,7 +282,10 @@
                         <div class="card-body">
                             <h5 class="card-title">Особенность 2</h5>
                             <p class="card-text">Описание второй особенности игры DragonEvo.</p>
-                            <a href="#" class="btn btn-purple-outline">Узнать больше</a>
+                            <div class="btn-group">
+                                <a href="#" class="btn btn-purple-outline">Узнать больше</a>
+                                <a href="#" class="btn btn-purple">Начать</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -274,7 +295,10 @@
                         <div class="card-body">
                             <h5 class="card-title">Особенность 3</h5>
                             <p class="card-text">Описание третьей особенности игры DragonEvo.</p>
-                            <a href="#" class="btn btn-purple-outline">Узнать больше</a>
+                            <div class="btn-group">
+                                <a href="#" class="btn btn-purple-outline">Узнать больше</a>
+                                <a href="#" class="btn btn-purple">Начать</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -288,7 +312,10 @@
                 <div class="col-md-6">
                     <h2>О нас</h2>
                     <p>DragonEvo - это увлекательная карточная игра, которая предлагает игрокам уникальный опыт. Мы стремимся создать захватывающий мир, полный приключений и стратегий.</p>
-                    <a href="#" class="btn btn-purple">Узнать больше</a>
+                    <div class="btn-group">
+                        <a href="#" class="btn btn-purple">Узнать больше</a>
+                        <a href="#" class="btn btn-purple-outline">Начать</a>
+                    </div>
                 </div>
                 <div class="col-md-6">
                     <img src="static/img/about.jpg" class="img-fluid" alt="About Us">
@@ -315,7 +342,10 @@
                             <label for="message" class="form-label">Сообщение</label>
                             <textarea class="form-control" id="message" rows="4" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-purple">Отправить</button>
+                        <div class="btn-group">
+                            <button type="submit" class="btn btn-purple">Отправить</button>
+                            <button type="reset" class="btn btn-purple-outline">Сбросить</button>
+                        </div>
                     </form>
                 </div>
                 <div class="col-md-6">
@@ -331,6 +361,10 @@
     <footer class="py-4 bg-dark text-white">
         <div class="container text-center">
             <p>&copy; 2023 DragonEvo. Все права защищены.</p>
+            <div class="btn-group">
+                <a href="#" class="btn btn-purple">Политика конфиденциальности</a>
+                <a href="#" class="btn btn-purple-outline">Условия использования</a>
+            </div>
         </div>
     </footer>
 
@@ -349,6 +383,7 @@
     </script>
 </body>
 </html>
+
 
 
 
