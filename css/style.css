@@ -19,6 +19,9 @@ body {
     height: 100%;
     object-fit: cover;
     background-image: url(../img/background-site-minecraft.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 header {
     width: 100%;
